@@ -1,10 +1,11 @@
 ---
-title: "601_AqM_export_phytobenthos"
+title: "0601_AqM_export_phytobenthos"
 format: 
   html:
     keep-md: true
 editor: visual
 ---
+
 
 
 
@@ -23,6 +24,7 @@ editor: visual
 
 
 
+
 ::: {.cell}
 
 ```{.r .cell-code}
@@ -36,12 +38,14 @@ library(ggplot2)
 :::
 
 
+
 ## Data  
+
 
 ::: {.cell}
 
 ```{.r .cell-code}
-dat_orig <- read_excel("Input_data/601_TaxonList_phytobenthos_AM_16.3.2023.xlsx", 
+dat_orig <- read_excel("Input_data/0601_TaxonList_phytobenthos_AM_16.3.2023.xlsx", 
                        col_types = "text", col_names = FALSE) %>%
   as.data.frame()
 
@@ -74,10 +78,16 @@ dat <- dat_data %>%
 ```
 
 ::: {.cell-output .cell-output-stderr}
+
 ```
-Warning in sub(",", ".", value_temporary, fixed = TRUE) %>% as.numeric(): NAs
-introduced by coercion
+Warning: There was 1 warning in `mutate()`.
+ℹ In argument: `value = sub(",", ".", value_temporary, fixed = TRUE) %>%
+  as.numeric()`.
+Caused by warning in `sub(",", ".", value_temporary, fixed = TRUE) %>% as.numeric()`:
+! NAs introduced by coercion
 ```
+
+
 :::
 
 ```{.r .cell-code}
@@ -101,7 +111,9 @@ if (nrow(check)>0){
 :::
 
 
+
 ## Test plot  
+
 
 ::: {.cell}
 
@@ -117,12 +129,16 @@ ggplot(dat %>% filter(TaxonName %in% selected_taxa & site_code %in% selected_sit
 ```
 
 ::: {.cell-output .cell-output-stderr}
+
 ```
-Warning: Removed 708 rows containing missing values (geom_point).
+Warning: Removed 708 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ```
+
+
 :::
 
 ::: {.cell-output-display}
-![](601_AqM_export_phytobenthos_files/figure-html/unnamed-chunk-3-1.png){width=672}
+![](0601_AqM_export_phytobenthos_files/figure-html/unnamed-chunk-3-1.png){width=672}
 :::
 :::
