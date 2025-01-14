@@ -1,5 +1,5 @@
 ---
-title: "601_AqM_export_phytobenthos"
+title: "0601_AqM_export_phytobenthos"
 format: 
   html:
     keep-md: true
@@ -39,7 +39,7 @@ library(ggplot2)
 #| message: false
 #| results: hold
 
-dat_orig <- read_excel("Input_data/601_TaxonList_phytobenthos_AM_16.3.2023.xlsx", 
+dat_orig <- read_excel("Input_data/0601_TaxonList_phytobenthos_AM_16.3.2023.xlsx", 
                        col_types = "text", col_names = FALSE) %>%
   as.data.frame()
 
